@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>xx</title>
+
+    <script>
+
+    </script>
+</head>
+
+<body>
+
+<h1>thymeleaf -- on.html</h1>
+<h1>表单提交11</h1>
+<!-- 表单提交用户信息,注意字段的设置,直接是*{} -->
+<form action="#" th:action="@{/user/login}" th:method="post">
+    <!--        登录页测试会自动添加该字段-->
+    <input style="width: 400px" th:if="${_csrf}!=null" th:value="${_csrf.token}" name="_csrf"/>
+
+    <input type="text" th:name="username"/>
+    <input type="text" th:name="password"/>
+    <input type="submit"/>
+</form>
+</body>
+</html>
+
+
+

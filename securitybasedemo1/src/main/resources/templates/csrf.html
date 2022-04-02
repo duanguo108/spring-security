@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- CSRF -->
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <!-- default header name is X-CSRF-TOKEN -->
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+    <title>测试</title>
+</head>
+<body>
+
+<h1>测试CSRF</h1>
+
+<h1>thymeleaf -- csrf.html</h1>
+<form>
+
+    <input type="button" id="buttonCrsf" name="按钮" onclick="aaa()"/>
+</form>
+</body>
+
+<script>
+    function aaa() {
+// 获取 CSRF Token
+        var csrfToken = $("meta[name='_csrf']").attr("content");
+        var csrfHeader = $("meta[name='_csrf_header']").attr("content");
+        console.log(csrfToken);
+        console.log(csrfHeader);
+    };
+
+
+</script>
+<script type="text/javascript" src="/jquery-1.7.2.min.js"></script>
+
+</html>

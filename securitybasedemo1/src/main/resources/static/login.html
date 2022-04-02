@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>xx</title>
+</head>
+<body>
+
+<h1>login.html</h1>
+<h1>表单提交</h1>
+<!-- 表单提交用户信息,注意字段的设置,直接是*{} -->
+<form action="/user/login"  method="post">
+    <!--操作不行，没有el表达式呀，不是jsp,可以看templates/on.html-->
+<!--    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />-->
+
+    username: <input type="text" name="username" />
+    password: <input type="text" name="password" />
+    <input type="checkbox"name="remember-me"title="记住密码"/><br/>
+    <input type="submit" />
+</form>
+</body>
+</html>
